@@ -6,7 +6,7 @@ const notificationSound = document.querySelector("#notification-sound");
 
 const sendMessage = document.querySelector("#send-message");
 
-const socket = io("http://45ef3079144b.ngrok.io");
+const socket = io("http://discord-proibido-pelo-fbi.herokuapp.com/");
 
 sendMessage.addEventListener("click", event => send());
 
