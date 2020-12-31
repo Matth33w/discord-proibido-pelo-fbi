@@ -11,7 +11,7 @@ app.set("views", path.join(__dirname, "views"));
 const http = require("http").createServer(app);
 const io = require("socket.io")(http);
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 var messages = [];
 
