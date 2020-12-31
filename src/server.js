@@ -11,6 +11,8 @@ app.set("views", path.join(__dirname, "views"));
 const http = require("http").createServer(app);
 const io = require("socket.io")(http);
 
+const messageMax = 25;
+
 const port = process.env.PORT || 3000;
 
 var messages = [];
@@ -22,8 +24,11 @@ app.get("/*", (request, response) => {
 io.on("connection", (socket) => {
     io.sockets.emit("displayMessages", messages);
 
-    socket.on("sendMessage", (data) => {;
+    socket.on("sendMessage", (data) => {
         messages.push(data);
+        if(messages.length > messageMax) {
+            messages.splice(0, messages.length - messageMax);
+        }
         io.sockets.emit("displayMessages", messages);
     });
 });
