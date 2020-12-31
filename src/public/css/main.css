@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    --webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: #000c15;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    color: white;
+    font-family: "Roboto Condensed";
+}
+
+::-webkit-scrollbar {
+    background-color: black;
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #84aeed;
+}

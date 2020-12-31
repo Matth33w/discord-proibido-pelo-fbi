@@ -1,0 +1,39 @@
+.messages {
+    padding: 16px;
+    width: 100%;
+    background-color: #002846;
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.message {
+    margin: 8px 0;
+}
+
+input {
+    outline: none;
+    color: white;
+}
+
+img {
+    width: 170px;
+}
+
+.title {
+    padding: 8px;
+}
+
+input[type="text"]#username{
+    padding: 4px;
+    font-size: 14px;
+    width: 40%;
+}
+
+input[type="text"]#message{
+    padding: 4px;
+    font-size: 18px;
+    width: 100%;
+    border: 1px solid #84aeed;
+    border-radius: 0 0 6px 6px;
+    background-color: rgba(0, 0, 0, 0);
+}
