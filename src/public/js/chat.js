@@ -25,13 +25,26 @@ message.addEventListener("keypress", event => {
     }
 });
 
-socket.on("displayMessages", (data) => {
+socket.on("firstLoad", (data) => {
     messages.innerHTML = "";
-    for(var content of data) {
+    for(var message of data) {
         messages.innerHTML += (`
         <div class="message">
-            <h4 class="usernameText">${XSSaquiNãoFilhote(content.message.username)}</h4>
-            <p class="messageText">${XSSaquiNãoFilhote(content.message.message)}</p>
+            <h4 class="usernameText">${XSSaquiNãoFilhote(message.username)}</h4>
+            <p class="messageText">${XSSaquiNãoFilhote(message.message)}</p>
+        </div>
+        `);
+    } 
+    messages.scroll(0, messages.scrollHeight);
+});
+
+socket.on("displayMessages", (data) => {
+    messages.innerHTML = "";
+    for(var message of data) {
+        messages.innerHTML += (`
+        <div class="message">
+            <h4 class="usernameText">${XSSaquiNãoFilhote(message.username)}</h4>
+            <p class="messageText">${XSSaquiNãoFilhote(message.message)}</p>
         </div>
         `);
     }
