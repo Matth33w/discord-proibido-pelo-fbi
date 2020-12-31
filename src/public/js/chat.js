@@ -13,7 +13,6 @@ sendMessage.addEventListener("click", event => send());
 async function send() {
     if(message.value.trim() != "" && username.value.trim() != "") {
         await socket.emit("sendMessage", { username: username.value, message: message.value });
-        notificationSound.play();
         message.value = "";
     } else {
         alert("Preenche seu nome e mensagem.");
@@ -38,6 +37,7 @@ socket.on("displayMessages", (data) => {
     }
     if(!document.hasFocus()){
         console.log("Veio uma nova mensagem!");
+        notificationSound.play();
     }
     messages.scroll(0, messages.scrollHeight);
 });
