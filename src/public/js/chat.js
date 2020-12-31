@@ -21,7 +21,9 @@ async function send() {
 
 message.addEventListener("keypress", event => {
     if(event.key == "Enter") {
+        event.preventDefault();
         send();
+        message.value = "";
     }
 });
 

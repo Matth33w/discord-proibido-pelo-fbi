@@ -4,6 +4,8 @@
     background-color: #002846;
     height: 400px;
     overflow-y: scroll;
+    max-width: 100vw;
+    word-break: break-all;
 }
 
 .message {
@@ -13,6 +15,7 @@
 input, textarea {
     outline: none;
     color: #002846;
+    font-family: "Roboto Condensed";
 }
 
 textarea {
@@ -21,6 +24,35 @@ textarea {
 
 img {
     width: 170px;
+}
+
+button#send-message {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    position: absolute;
+    transform: translateY(35%);
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    right: 4px;
+}
+
+#username {
+    margin-bottom: 12px;
+}
+
+.text-input {
+    position: relative;
+    align-items: center;
+}
+
+.text-input textarea {
+    position: absolute;
+}
+
+button#send-message img {
+    width: 100%;
+    height: 100%;
 }
 
 .title {
