@@ -27,15 +27,15 @@ message.addEventListener("keypress", event => {
 
 socket.on("displayMessages", (data) => {
     messages.innerHTML = "";
-    for(var message of data) {
+    for(var content of data) {
         messages.innerHTML += (`
         <div class="message">
-            <h4 class="usernameText">${XSSaquiNãoFilhote(message.username)}</h4>
-            <p class="messageText">${XSSaquiNãoFilhote(message.message)}</p>
+            <h4 class="usernameText">${XSSaquiNãoFilhote(content.message.username)}</h4>
+            <p class="messageText">${XSSaquiNãoFilhote(content.message.message)}</p>
         </div>
         `);
     }
-    if(!document.hasFocus()){
+    if(!document.hasFocus() && !content.firstLoad){
         console.log("Veio uma nova mensagem!");
         notificationSound.play();
     }

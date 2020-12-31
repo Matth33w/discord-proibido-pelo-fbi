@@ -22,7 +22,7 @@ app.get("/*", (request, response) => {
 });
 
 io.on("connection", (socket) => {
-    io.sockets.emit("displayMessages", messages);
+    io.sockets.emit("displayMessages", {messages, firstLoad: true});
 
     socket.on("sendMessage", (data) => {
         messages.push(data);
