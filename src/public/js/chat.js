@@ -48,7 +48,7 @@ socket.on("displayMessages", (data) => {
         </div>
         `);
     }
-    if(!document.hasFocus() && !content.firstLoad){
+    if(!document.hasFocus()){
         console.log("Veio uma nova mensagem!");
         notificationSound.play();
     }
