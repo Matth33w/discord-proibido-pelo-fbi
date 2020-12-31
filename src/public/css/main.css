@@ -14,6 +14,17 @@ h1, h2, h3, h4, h5, h6, p {
     font-family: "Roboto Condensed";
 }
 
+header {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+}
+
+header img {
+    width: 64px;
+    height: 64px;
+}
+
 ::-webkit-scrollbar {
     background-color: black;
     width: 12px;
